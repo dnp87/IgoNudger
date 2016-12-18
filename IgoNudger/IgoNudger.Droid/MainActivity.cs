@@ -9,7 +9,7 @@ using Android.OS;
 
 namespace IgoNudger.Droid
 {
-	[Activity (Label = "IgoNudger.Droid", MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity (Label = "@string/app_name", MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity
 	{
 
