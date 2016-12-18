@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="hello">Hello World, Click Me!</string>
-	<string name="app_name">IgoNudger.Droid</string>
+	<string name="addTask">Add a task</string>
+	<string name="app_name">IgoNudger</string>
+  <string name="completeSwitch">Completed</string>
+  <string name="taskDetailsTitle">Task details</string>
 </resources>

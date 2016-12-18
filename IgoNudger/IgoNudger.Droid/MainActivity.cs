@@ -12,7 +12,6 @@ namespace IgoNudger.Droid
 	[Activity (Label = "IgoNudger.Droid", MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity
 	{
-		int count = 1;
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -21,13 +20,16 @@ namespace IgoNudger.Droid
 			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Main);
 
-			// Get our button from the layout resource,
-			// and attach an event to it
-			Button button = FindViewById<Button> (Resource.Id.myButton);
-			
-			button.Click += delegate {
-				button.Text = string.Format ("{0} clicks!", count++);
-			};
+            // Get our button from the layout resource,
+            // and attach an event to it
+            Button button = FindViewById<Button>(Resource.Id.addTaskButton);
+            button.Click += delegate
+            {
+                var intent = new Intent(this, typeof(TaskDetailsActivity));
+
+                //todo: set intent data when available
+                StartActivity(intent);
+            };
 		}
 	}
 }
