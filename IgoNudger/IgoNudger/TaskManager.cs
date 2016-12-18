@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace IgoNudger
 {
-    class TaskManager
+    public class TaskManager
     {
         TaskRepository repository;
 
