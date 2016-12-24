@@ -41,7 +41,7 @@ namespace IgoNudger.Droid
 
         public override long GetItemId(int position)
         {
-            return items[position].ID;
+            return items[position].Id;
         }
 
         public override View GetView(int position, View convertView, ViewGroup parent)

@@ -30,8 +30,8 @@ namespace IgoNudger.Droid
             button.Click += delegate
             {
                 var intent = new Intent(this, typeof(TaskDetailsActivity));
+                intent.PutExtra("Id", 0);
 
-                //todo: set intent data when available
                 StartActivity(intent);
             };
 		}

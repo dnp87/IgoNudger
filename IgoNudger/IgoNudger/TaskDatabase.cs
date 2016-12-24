@@ -34,7 +34,7 @@ namespace IgoNudger
         {
             lock (locker)
             {
-                return database.Table<TaskItem>().FirstOrDefault(x => x.ID == id);
+                return database.Table<TaskItem>().FirstOrDefault(x => x.Id == id);
             }
         }
 
@@ -42,10 +42,10 @@ namespace IgoNudger
         {
             lock (locker)
             {
-                if (item.ID != 0)
+                if (item.Id != 0)
                 {
                     database.Update(item);
-                    return item.ID;
+                    return item.Id;
                 }
                 else
                 {
