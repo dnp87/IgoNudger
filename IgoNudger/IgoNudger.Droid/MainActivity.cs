@@ -40,21 +40,9 @@ namespace IgoNudger.Droid
         {
             base.OnResume();
 
-            var testTasks = new List<TaskItem>()
-            {
-                new TaskItem
-                {
-                    ID = 1,
-                    Name = "task 1"
-                },
-                new TaskItem
-                {
-                    ID = 2,
-                    Name = "task 2"
-                },
-            };
+            var tasks = App.Current.TaskManager.GetTasks();
 
-            listView.Adapter = new TaskItemListAdapter(this, testTasks);
+            listView.Adapter = new TaskItemListAdapter(this, tasks);
         }
 	}
 }
