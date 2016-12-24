@@ -2,6 +2,7 @@
 <resources>
 	<string name="addTask">Add a task</string>
 	<string name="app_name">Igo Nudger</string>
-  <string name="completeSwitch">Completed</string>
+  <string name="completedSwitch">Completed</string>
   <string name="taskDetailsTitle">Task details</string>
+  <string name="saveButton">Save</string>
 </resources>

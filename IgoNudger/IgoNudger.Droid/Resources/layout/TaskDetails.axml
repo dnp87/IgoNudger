@@ -3,15 +3,23 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:text="task description here"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/taskDescription" />
+        android:id="@+id/nameEdit" />
+    <EditText
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/descriptionEdit" />
     <Switch
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/completeSwitch"
-        android:text="@string/completeSwitch" />
+        android:id="@+id/completedSwitch"
+        android:text="@string/completedSwitch" />
+    <Button
+        android:text="@string/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/saveButton" />
 </LinearLayout>

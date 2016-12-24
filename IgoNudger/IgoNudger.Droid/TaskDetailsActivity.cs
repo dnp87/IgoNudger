@@ -20,6 +20,15 @@ namespace IgoNudger.Droid
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.TaskDetails);
+
+            var saveButton = FindViewById<Button>(Resource.Id.saveButton);
+
+            saveButton.Click += SaveButton_Click;
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }
