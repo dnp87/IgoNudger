@@ -9,31 +9,31 @@ namespace IgoNudger
 {
     public class TaskRepository
     {
-        TaskDatabase db = null;
+        TaskDatabase _db = null;
 
         public TaskRepository(SQLiteConnection conn)
         {
-            db = new TaskDatabase(conn);
+            _db = new TaskDatabase(conn);
         }
 
         public TaskItem GetTask(int id)
         {
-            return db.GetItem(id);
+            return _db.GetItem(id);
         }
 
         public IEnumerable<TaskItem> GetTasks()
         {
-            return db.GetItems();
+            return _db.GetItems();
         }
 
         public int SaveTask(TaskItem item)
         {
-            return db.SaveItem(item);
+            return _db.SaveItem(item);
         }
 
         public int DeleteTask(int id)
         {
-            return db.DeleteItem(id);
+            return _db.DeleteItem(id);
         }
     }
 }

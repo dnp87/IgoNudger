@@ -13,7 +13,8 @@ namespace IgoNudger.Droid
 	[Activity (Label = "@string/app_name", MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity
 	{
-        ListView listView;
+        ListView _listView;
+        IList<TaskItem> _tasks;
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -22,7 +23,8 @@ namespace IgoNudger.Droid
 			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Main);
 
-            listView = FindViewById<ListView>(Resource.Id.taskList);
+            _listView = FindViewById<ListView>(Resource.Id.taskList);
+            _listView.ItemClick += ListView_ItemClick;
 
             // Get our button from the layout resource,
             // and attach an event to it
@@ -36,13 +38,20 @@ namespace IgoNudger.Droid
             };
 		}
 
+        private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            var intent = new Intent(this, typeof(TaskDetailsActivity));
+            intent.PutExtra("Id", _tasks[e.Position].Id);
+
+            StartActivity(intent);
+        }
+
         protected override void OnResume()
         {
             base.OnResume();
 
-            var tasks = App.Current.TaskManager.GetTasks();
-
-            listView.Adapter = new TaskItemListAdapter(this, tasks);
+            _tasks = App.Current.TaskManager.GetTasks();
+            _listView.Adapter = new TaskItemListAdapter(this, _tasks);
         }
 	}
 }

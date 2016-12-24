@@ -15,12 +15,12 @@ namespace IgoNudger.Droid
     [Activity(Label = "@string/taskDetailsTitle")]
     public class TaskDetailsActivity : Activity
     {
-        TaskItem taskItem;
+        TaskItem _taskItem;
 
-        Button saveButton;
-        EditText nameEdit;
-        EditText descriptionEdit;
-        Switch completedSwitch;
+        Button _saveButton;
+        EditText _nameEdit;
+        EditText _descriptionEdit;
+        Switch _completedSwitch;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -29,42 +29,42 @@ namespace IgoNudger.Droid
             var id = Intent.GetIntExtra("Id", 0);
             if( id != 0)
             {
-                taskItem = App.Current.TaskManager.GetTask(id);
+                _taskItem = App.Current.TaskManager.GetTask(id);
             }
             else
             {
-                taskItem = new TaskItem();
+                _taskItem = new TaskItem();
             }
 
             SetContentView(Resource.Layout.TaskDetails);
             GetControlsToFields();
-            SetControlValues(taskItem);
+            SetControlValues(_taskItem);
 
-            saveButton.Click += SaveButton_Click;
+            _saveButton.Click += SaveButton_Click;
         }
 
         private void SetControlValues(TaskItem taskItem)
         {
-            nameEdit.Text = taskItem.Name;
-            descriptionEdit.Text = taskItem.Description;
-            completedSwitch.Checked = taskItem.Completed;
+            _nameEdit.Text = taskItem.Name;
+            _descriptionEdit.Text = taskItem.Description;
+            _completedSwitch.Checked = taskItem.Completed;
         }
 
         private void GetControlsToFields()
         {
-            saveButton = FindViewById<Button>(Resource.Id.saveButton);
-            nameEdit = FindViewById<EditText>(Resource.Id.nameEdit);
-            descriptionEdit = FindViewById<EditText>(Resource.Id.descriptionEdit);
-            completedSwitch = FindViewById<Switch>(Resource.Id.completedSwitch);
+            _saveButton = FindViewById<Button>(Resource.Id.saveButton);
+            _nameEdit = FindViewById<EditText>(Resource.Id.nameEdit);
+            _descriptionEdit = FindViewById<EditText>(Resource.Id.descriptionEdit);
+            _completedSwitch = FindViewById<Switch>(Resource.Id.completedSwitch);
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            taskItem.Name = nameEdit.Text;
-            taskItem.Description = descriptionEdit.Text;
-            taskItem.Completed = completedSwitch.Checked;
+            _taskItem.Name = _nameEdit.Text;
+            _taskItem.Description = _descriptionEdit.Text;
+            _taskItem.Completed = _completedSwitch.Checked;
 
-            App.Current.TaskManager.SaveTask(taskItem);
+            App.Current.TaskManager.SaveTask(_taskItem);
             Finish();
         }
     }
