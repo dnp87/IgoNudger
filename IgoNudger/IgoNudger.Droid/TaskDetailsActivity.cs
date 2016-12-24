@@ -65,7 +65,7 @@ namespace IgoNudger.Droid
             taskItem.Completed = completedSwitch.Checked;
 
             App.Current.TaskManager.SaveTask(taskItem);
-            //todo: close intent somehow
+            Finish();
         }
     }
 }
