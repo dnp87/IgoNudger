@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using System.Collections.Generic;
+using NotificationCompat = Android.Support.V4.App.NotificationCompat;
 
 namespace IgoNudger.Droid
 {
@@ -16,7 +17,9 @@ namespace IgoNudger.Droid
         ListView _listView;
         IList<TaskItem> _tasks;
 
-		protected override void OnCreate (Bundle bundle)
+        private static readonly int ButtonClickNotificationId = 1000;
+
+        protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
 
@@ -43,7 +46,15 @@ namespace IgoNudger.Droid
 
         private void TestNtfButton_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException("todo");
+            // Build the notification:
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
+                .SetAutoCancel(true)                    // Dismiss from the notif. area when clicked
+                .SetContentText("test"); // The message to display.
+
+            // Finally, publish the notification:
+            NotificationManager notificationManager =
+                (NotificationManager)GetSystemService(Context.NotificationService);
+            notificationManager.Notify(ButtonClickNotificationId, builder.Build());
         }
 
         private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
