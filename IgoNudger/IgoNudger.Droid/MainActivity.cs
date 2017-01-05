@@ -36,7 +36,15 @@ namespace IgoNudger.Droid
 
                 StartActivity(intent);
             };
+
+            var testNtfButton = FindViewById<Button>(Resource.Id.testNtfButton);
+            testNtfButton.Click += TestNtfButton_Click;
 		}
+
+        private void TestNtfButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException("todo");
+        }
 
         private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
