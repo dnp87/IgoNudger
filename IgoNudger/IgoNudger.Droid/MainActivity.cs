@@ -47,9 +47,11 @@ namespace IgoNudger.Droid
         private void TestNtfButton_Click(object sender, EventArgs e)
         {
             // Build the notification:
-            NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
-                .SetAutoCancel(true)                    // Dismiss from the notif. area when clicked
-                .SetContentText("test"); // The message to display.
+            Notification.Builder builder = new Notification.Builder(this)
+                .SetAutoCancel(true)  // Dismiss from the notif. area when clicked
+                .SetContentTitle("test!!")
+                .SetSmallIcon(Resource.Drawable.Icon)
+                .SetContentText("test!!"); // The message to display.
 
             // Finally, publish the notification:
             NotificationManager notificationManager =
