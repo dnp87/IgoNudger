@@ -119,6 +119,9 @@ namespace IgoNudger.Droid
 			// aapt resource value: 0x7f040002
 			public const int completedSwitch = 2130968578;
 			
+			// aapt resource value: 0x7f040005
+			public const int report_ntf_label = 2130968581;
+			
 			// aapt resource value: 0x7f040004
 			public const int saveButton = 2130968580;
 			

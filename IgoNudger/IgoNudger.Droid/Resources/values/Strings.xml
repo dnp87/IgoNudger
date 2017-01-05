@@ -5,4 +5,6 @@
   <string name="completedSwitch">Completed</string>
   <string name="taskDetailsTitle">Task details</string>
   <string name="saveButton">Save</string>
+  <string name="saveButton">Save</string>
+  <string name="report_ntf_label">Progress report</string>
 </resources>
