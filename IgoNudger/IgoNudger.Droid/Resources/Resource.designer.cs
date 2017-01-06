@@ -60,6 +60,15 @@ namespace IgoNudger.Droid
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f05000a
+			public const int Check1 = 2131034122;
+			
+			// aapt resource value: 0x7f050008
+			public const int Text1 = 2131034120;
+			
+			// aapt resource value: 0x7f050009
+			public const int Text2 = 2131034121;
+			
 			// aapt resource value: 0x7f050000
 			public const int addTaskButton = 2131034112;
 			
@@ -68,6 +77,9 @@ namespace IgoNudger.Droid
 			
 			// aapt resource value: 0x7f050004
 			public const int descriptionEdit = 2131034116;
+			
+			// aapt resource value: 0x7f050007
+			public const int linearLayout1 = 2131034119;
 			
 			// aapt resource value: 0x7f050003
 			public const int nameEdit = 2131034115;
@@ -100,6 +112,9 @@ namespace IgoNudger.Droid
 			// aapt resource value: 0x7f030001
 			public const int TaskDetails = 2130903041;
 			
+			// aapt resource value: 0x7f030002
+			public const int TaskListItem = 2130903042;
+			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -120,7 +135,7 @@ namespace IgoNudger.Droid
 			public const int app_name = 2130968577;
 			
 			// aapt resource value: 0x7f040002
-			public const int completedSwitch = 2130968578;
+			public const int completedText = 2130968578;
 			
 			// aapt resource value: 0x7f040005
 			public const int report_ntf_label = 2130968581;

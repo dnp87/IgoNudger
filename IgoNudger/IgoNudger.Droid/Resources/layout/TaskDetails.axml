@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/completedSwitch"
-        android:text="@string/completedSwitch" />
+        android:text="@string/completedText" />
     <Button
         android:text="@string/saveButton"
         android:layout_width="match_parent"
