@@ -12,17 +12,21 @@
         android:id="@+id/linearLayout1" />
     <TextView
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/holo_blue_dark"
         android:id="@+id/Text1" />
     <TextView
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/holo_blue_dark"
         android:id="@+id/Text2" />
     <CheckBox
         android:text="@string/completedText"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/Check1" />
+        android:id="@+id/Check1"
+        android:clickable="true"
+        android:editable="true" />
 </LinearLayout>

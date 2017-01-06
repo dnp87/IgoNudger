@@ -50,10 +50,12 @@ namespace IgoNudger.Droid
             if( view == null )
             {
                 //recreate when required
-                view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleListItem1, null);
+                view = context.LayoutInflater.Inflate(Resource.Layout.TaskListItem, null);
             }
 
-            view.FindViewById<TextView>(Android.Resource.Id.Text1).Text = items[position].Name;
+            view.FindViewById<TextView>(Resource.Id.Text1).Text = items[position].Name;
+            view.FindViewById<TextView>(Resource.Id.Text2).Text = "";//todo
+            view.FindViewById<CheckBox>(Resource.Id.Check1).Checked = items[position].Completed;
             return view;
         }
     }
