@@ -21,6 +21,11 @@ namespace IgoNudger
             return _repository.GetTask(id);
         }
 
+        internal IList<TaskItem> GetIncompleteTasks()
+        {
+            return new List<TaskItem>(_repository.GetIncompleteTasks());
+        }
+
         public IList<TaskItem> GetTasks()
         {
             return new List<TaskItem>(_repository.GetTasks());

@@ -30,6 +30,16 @@ namespace IgoNudger
             }
         }
 
+        public IEnumerable<TaskItem> GetIncompleteItems()
+        {
+            lock (locker)
+            {
+                return (from i in database.Table<TaskItem>()
+                        where !i.Completed
+                        select i).ToList();
+            }
+        }
+
         public TaskItem GetItem(int id)
         {
             lock (locker)

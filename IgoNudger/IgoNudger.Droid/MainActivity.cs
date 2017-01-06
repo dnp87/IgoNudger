@@ -47,16 +47,22 @@ namespace IgoNudger.Droid
         private void TestNtfButton_Click(object sender, EventArgs e)
         {
             // Build the notification:
-            NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
-                .SetAutoCancel(true)  // Dismiss from the notif. area when clicked
-                .SetContentTitle("test!!")
-                .SetSmallIcon(Resource.Drawable.Icon)
-                .SetContentText("test!!"); // The message to display.
+            var ntfTextBuilder = new IncompleteTaskNtfTextBuilder(App.Current.TaskManager);
+            var text = ntfTextBuilder.GetText();
 
-            // Finally, publish the notification:
-            NotificationManager notificationManager =
-                (NotificationManager)GetSystemService(Context.NotificationService);
-            notificationManager.Notify(ButtonClickNotificationId, builder.Build());
+            if(!string.IsNullOrWhiteSpace(text))
+            {
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
+                .SetAutoCancel(true)  // Dismiss from the notif. area when clicked
+                .SetContentTitle("TODO")
+                .SetSmallIcon(Resource.Drawable.Icon)
+                .SetContentText(text); // The message to display.
+
+                // Finally, publish the notification:
+                NotificationManager notificationManager =
+                    (NotificationManager)GetSystemService(Context.NotificationService);
+                notificationManager.Notify(ButtonClickNotificationId, builder.Build());
+            }
         }
 
         private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)

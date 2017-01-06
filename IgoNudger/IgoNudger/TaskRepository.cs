@@ -26,6 +26,11 @@ namespace IgoNudger
             return _db.GetItems();
         }
 
+        public IEnumerable<TaskItem> GetIncompleteTasks()
+        {
+            return _db.GetIncompleteItems();
+        }
+
         public int SaveTask(TaskItem item)
         {
             return _db.SaveItem(item);
