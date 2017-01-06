@@ -48,15 +48,22 @@ namespace IgoNudger.Droid
         {
             // Build the notification:
             var ntfTextBuilder = new IncompleteTaskNtfTextBuilder(App.Current.TaskManager);
-            var text = ntfTextBuilder.GetText();
+            var strs = ntfTextBuilder.GetEnumerableStrings();
 
-            if(!string.IsNullOrWhiteSpace(text))
+            if( strs.Count > 0 )
             {
-                NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
+                var builder = new NotificationCompat.Builder(this)
                 .SetAutoCancel(true)  // Dismiss from the notif. area when clicked
                 .SetContentTitle("TODO")
                 .SetSmallIcon(Resource.Drawable.Icon)
-                .SetContentText(text); // The message to display.
+                .SetContentText("TODO"); // The message to display.
+
+                var inboxStyle = new NotificationCompat.InboxStyle();
+                foreach( var str in strs)
+                {
+                    inboxStyle.AddLine(str);
+                }
+                builder.SetStyle(inboxStyle);
 
                 // Finally, publish the notification:
                 NotificationManager notificationManager =

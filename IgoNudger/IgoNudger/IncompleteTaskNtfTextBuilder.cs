@@ -15,13 +15,19 @@ namespace IgoNudger
             _manager = manager;
         }
 
+        public IList<string> GetEnumerableStrings()
+        {
+            var tasks = _manager.GetIncompleteTasks();
+
+            return tasks.Select(o => o.Name).ToList();
+        }
+
         public string GetText()
         {
-            IList<TaskItem> tasks = _manager.GetIncompleteTasks();
+            var tasks = _manager.GetIncompleteTasks();
             var sb = new StringBuilder();
             if( tasks.Count > 0)
             {
-                sb.AppendLine("TODO:");
                 foreach (var t in tasks)
                 {
                     sb.AppendLine(t.Name);
