@@ -17,18 +17,26 @@ namespace IgoNudger.Droid
     public class NotifierService : IntentService
     {
         private static readonly int _notificationId = 1000;
+        Context _context;
 
-        //todo: add some time settings
         public NotifierService() : base("NotifierService")
         {
+            //make stubs happy
+        }
+
+        //todo: add some time settings
+        public NotifierService(Context context) : base("NotifierService")
+        {
+            _context = context;
             SetTimer();
         }
 
-        private void SetTimer()
+        public void SetTimer()
         {
             var intent = new Intent("NotifierService");
-            var alarmManager = (AlarmManager) GetSystemService(AlarmService);
-            var pendingIntent = PendingIntent.GetService(this, 0, intent, PendingIntentFlags.CancelCurrent);
+            var sysAlarmService = _context.GetSystemService(Context.AlarmService);
+            var alarmManager = (AlarmManager)sysAlarmService;
+            var pendingIntent = PendingIntent.GetService(_context, 0, intent, PendingIntentFlags.CancelCurrent);
             alarmManager.SetRepeating(AlarmType.ElapsedRealtime, 10000, 10000, pendingIntent);
         }
 

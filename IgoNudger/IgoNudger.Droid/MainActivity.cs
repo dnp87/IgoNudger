@@ -15,8 +15,6 @@ namespace IgoNudger.Droid
         ListView _listView;
         IList<TaskItem> _tasks;
 
-        private static readonly int ButtonClickNotificationId = 1000;
-
         protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
@@ -38,7 +36,7 @@ namespace IgoNudger.Droid
                 StartActivity(intent);
             };
 
-            var service = new NotifierService();
+            var service = new NotifierService(this);
 		}
 
         private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
