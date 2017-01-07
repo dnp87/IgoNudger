@@ -38,7 +38,7 @@ namespace IgoNudger.Droid
             var rcv = new NotificationAlertReceiver();
             var hh = 19;
             var mm = 0;
-            rcv.SetAlarm(this, hh, mm, ss);
+            rcv.SetAlarm(this, hh, mm);
 		}
 
         private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
