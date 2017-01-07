@@ -6,10 +6,8 @@ using System.Text;
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using NotificationCompat = Android.Support.V4.App.NotificationCompat;
+using Android.Icu.Util;
 
 namespace IgoNudger.Droid
 {
@@ -40,14 +38,18 @@ namespace IgoNudger.Droid
             alarmManager.Cancel(sender);
         }
 
-        public void SetAlarm(Context context, int alertTimeSeconds)
+        public void SetAlarm(Context context, int hh, int mm)
         {
-            long now = SystemClock.ElapsedRealtime();
-            AlarmManager am = (AlarmManager)context.GetSystemService(Context.AlarmService);
             Intent intent = new Intent(context, this.Class);
             PendingIntent pi = PendingIntent.GetBroadcast(context, 0, intent, 0);
 
-            am.Set(AlarmType.ElapsedRealtimeWakeup, now + ((long)(alertTimeSeconds * 1000)), pi);
+            Java.Util.Calendar calendar = Java.Util.Calendar.Instance;
+            calendar.Set(Java.Util.CalendarField.HourOfDay, hh);
+            calendar.Set(Java.Util.CalendarField.Minute, mm);
+            calendar.Set(Java.Util.CalendarField.Second, 0);
+
+            AlarmManager am = (AlarmManager)context.GetSystemService(Context.AlarmService);
+            am.SetRepeating(AlarmType.RtcWakeup, calendar.TimeInMillis, AlarmManager.IntervalDay, pi);
         }
 
         private void SendNtfIfRequired(Context context)

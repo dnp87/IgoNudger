@@ -5,7 +5,6 @@ using Android.Content;
 using Android.Widget;
 using Android.OS;
 using System.Collections.Generic;
-using NotificationCompat = Android.Support.V4.App.NotificationCompat;
 
 namespace IgoNudger.Droid
 {
@@ -37,7 +36,9 @@ namespace IgoNudger.Droid
             };
 
             var rcv = new NotificationAlertReceiver();
-            rcv.SetAlarm(this, 30);
+            var hh = 19;
+            var mm = 0;
+            rcv.SetAlarm(this, hh, mm, ss);
 		}
 
         private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
