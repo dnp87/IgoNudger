@@ -2,8 +2,6 @@
 
 using Android.App;
 using Android.Content;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 using Android.OS;
 using System.Collections.Generic;
@@ -39,38 +37,7 @@ namespace IgoNudger.Droid
 
                 StartActivity(intent);
             };
-
-            var testNtfButton = FindViewById<Button>(Resource.Id.testNtfButton);
-            testNtfButton.Click += TestNtfButton_Click;
 		}
-
-        private void TestNtfButton_Click(object sender, EventArgs e)
-        {
-            // Build the notification:
-            var ntfTextBuilder = new IncompleteTaskNtfTextBuilder(App.Current.TaskManager);
-            var strs = ntfTextBuilder.GetEnumerableStrings();
-
-            if( strs.Count > 0 )
-            {
-                var builder = new NotificationCompat.Builder(this)
-                .SetAutoCancel(true)  // Dismiss from the notif. area when clicked
-                .SetContentTitle("TODO")
-                .SetSmallIcon(Resource.Drawable.Icon)
-                .SetContentText("TODO"); // The message to display.
-
-                var inboxStyle = new NotificationCompat.InboxStyle();
-                foreach( var str in strs)
-                {
-                    inboxStyle.AddLine(str);
-                }
-                builder.SetStyle(inboxStyle);
-
-                // Finally, publish the notification:
-                NotificationManager notificationManager =
-                    (NotificationManager)GetSystemService(Context.NotificationService);
-                notificationManager.Notify(ButtonClickNotificationId, builder.Build());
-            }
-        }
 
         private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {

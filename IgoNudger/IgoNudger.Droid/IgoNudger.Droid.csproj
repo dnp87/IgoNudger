@@ -79,6 +79,7 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="NotifierService.cs" />
     <Compile Include="ReportNotificationActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

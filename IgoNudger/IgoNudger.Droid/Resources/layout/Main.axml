@@ -8,11 +8,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/addTask" />
-    <Button
-        android:text="Test notification"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/testNtfButton" />
     <ListView
         android:id="@+id/taskList"
         android:layout_width="fill_parent"
