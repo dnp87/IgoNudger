@@ -13,6 +13,7 @@ using NotificationCompat = Android.Support.V4.App.NotificationCompat;
 
 namespace IgoNudger.Droid
 {
+    [BroadcastReceiver]
     public class NotificationAlertReceiver : BroadcastReceiver
     {
         private static readonly int _notificationId = 1000;
@@ -25,13 +26,10 @@ namespace IgoNudger.Droid
         public override void OnReceive(Context context, Intent intent)
         {
             PowerManager pm = (PowerManager)context.GetSystemService(Context.PowerService);
-            PowerManager.WakeLock w1 = pm.NewWakeLock(WakeLockFlags.Partial, "NotificationReceiver");
+            PowerManager.WakeLock w1 = pm.NewWakeLock(WakeLockFlags.Partial, "NotificationAlertReceiver");
             w1.Acquire();
-            var nMgr = (NotificationManager)context.GetSystemService(Context.NotificationService);
-            var notification = new Notification(Resource.Drawable.Icon, "Arrival");
-            var pendingIntent = PendingIntent.GetActivity(context, 0, new Intent(context, typeof(MainActivity)), 0);
             SendNtfIfRequired(context);
-            w1.Release(); ;
+            w1.Release();
         }
 
         public void CancelAlarm(Context context)
@@ -48,6 +46,7 @@ namespace IgoNudger.Droid
             AlarmManager am = (AlarmManager)context.GetSystemService(Context.AlarmService);
             Intent intent = new Intent(context, this.Class);
             PendingIntent pi = PendingIntent.GetBroadcast(context, 0, intent, 0);
+
             am.Set(AlarmType.ElapsedRealtimeWakeup, now + ((long)(alertTimeSeconds * 1000)), pi);
         }
 
