@@ -36,7 +36,8 @@ namespace IgoNudger.Droid
                 StartActivity(intent);
             };
 
-            var service = new NotifierService(this);
+            var rcv = new NotificationAlertReceiver();
+            rcv.SetAlarm(this, 30);
 		}
 
         private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
