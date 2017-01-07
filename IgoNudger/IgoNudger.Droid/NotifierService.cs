@@ -21,12 +21,15 @@ namespace IgoNudger.Droid
         //todo: add some time settings
         public NotifierService() : base("NotifierService")
         {
-
+            SetTimer();
         }
 
         private void SetTimer()
         {
-            
+            var intent = new Intent("NotifierService");
+            var alarmManager = (AlarmManager) GetSystemService(AlarmService);
+            var pendingIntent = PendingIntent.GetService(this, 0, intent, PendingIntentFlags.CancelCurrent);
+            alarmManager.SetRepeating(AlarmType.ElapsedRealtime, 10000, 10000, pendingIntent);
         }
 
         protected override void OnHandleIntent(Intent intent)
