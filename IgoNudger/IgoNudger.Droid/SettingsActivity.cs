@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Preferences;
 
 namespace IgoNudger.Droid
 {
@@ -19,7 +20,23 @@ namespace IgoNudger.Droid
         {
             base.OnCreate(savedInstanceState);
 
-            // Create your application here
+            using (var fm = FragmentManager.BeginTransaction())
+            {
+                var sf = new SettingsFragment();
+
+                fm.Add(Android.Resource.Id.Content, sf);
+                fm.Commit();
+            }
+        }
+    }
+
+    public class SettingsFragment: PreferenceFragment
+    {
+        public override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+
+            AddPreferencesFromResource(Resource.Xml.preferences);
         }
     }
 }

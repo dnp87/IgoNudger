@@ -60,35 +60,35 @@ namespace IgoNudger.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050009
-			public const int Check1 = 2131034121;
+			// aapt resource value: 0x7f060009
+			public const int Check1 = 2131099657;
 			
-			// aapt resource value: 0x7f050007
-			public const int Text1 = 2131034119;
+			// aapt resource value: 0x7f060007
+			public const int Text1 = 2131099655;
 			
-			// aapt resource value: 0x7f050008
-			public const int Text2 = 2131034120;
+			// aapt resource value: 0x7f060008
+			public const int Text2 = 2131099656;
 			
-			// aapt resource value: 0x7f050000
-			public const int addTaskButton = 2131034112;
+			// aapt resource value: 0x7f060000
+			public const int addTaskButton = 2131099648;
 			
-			// aapt resource value: 0x7f050005
-			public const int completedSwitch = 2131034117;
+			// aapt resource value: 0x7f060005
+			public const int completedSwitch = 2131099653;
 			
-			// aapt resource value: 0x7f050004
-			public const int descriptionEdit = 2131034116;
+			// aapt resource value: 0x7f060004
+			public const int descriptionEdit = 2131099652;
 			
-			// aapt resource value: 0x7f050003
-			public const int nameEdit = 2131034115;
+			// aapt resource value: 0x7f060003
+			public const int nameEdit = 2131099651;
 			
-			// aapt resource value: 0x7f050006
-			public const int saveButton = 2131034118;
+			// aapt resource value: 0x7f060006
+			public const int saveButton = 2131099654;
 			
-			// aapt resource value: 0x7f050001
-			public const int settingsButton = 2131034113;
+			// aapt resource value: 0x7f060001
+			public const int settingsButton = 2131099649;
 			
-			// aapt resource value: 0x7f050002
-			public const int taskList = 2131034114;
+			// aapt resource value: 0x7f060002
+			public const int taskList = 2131099650;
 			
 			static Id()
 			{
@@ -125,26 +125,32 @@ namespace IgoNudger.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f040000
-			public const int addTask = 2130968576;
+			// aapt resource value: 0x7f050000
+			public const int addTask = 2131034112;
 			
-			// aapt resource value: 0x7f040001
-			public const int app_name = 2130968577;
+			// aapt resource value: 0x7f050001
+			public const int app_name = 2131034113;
 			
-			// aapt resource value: 0x7f040003
-			public const int completedText = 2130968579;
+			// aapt resource value: 0x7f050003
+			public const int completedText = 2131034115;
 			
-			// aapt resource value: 0x7f040006
-			public const int report_ntf_label = 2130968582;
+			// aapt resource value: 0x7f050008
+			public const int pref_notification_send = 2131034120;
 			
-			// aapt resource value: 0x7f040005
-			public const int saveButton = 2130968581;
+			// aapt resource value: 0x7f050007
+			public const int pref_notification_title = 2131034119;
 			
-			// aapt resource value: 0x7f040002
-			public const int settings_name = 2130968578;
+			// aapt resource value: 0x7f050006
+			public const int report_ntf_label = 2131034118;
 			
-			// aapt resource value: 0x7f040004
-			public const int taskDetailsTitle = 2130968580;
+			// aapt resource value: 0x7f050005
+			public const int saveButton = 2131034117;
+			
+			// aapt resource value: 0x7f050002
+			public const int settings_name = 2131034114;
+			
+			// aapt resource value: 0x7f050004
+			public const int taskDetailsTitle = 2131034116;
 			
 			static String()
 			{
@@ -152,6 +158,22 @@ namespace IgoNudger.Droid
 			}
 			
 			private String()
+			{
+			}
+		}
+		
+		public partial class Xml
+		{
+			
+			// aapt resource value: 0x7f040000
+			public const int preferences = 2130968576;
+			
+			static Xml()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Xml()
 			{
 			}
 		}

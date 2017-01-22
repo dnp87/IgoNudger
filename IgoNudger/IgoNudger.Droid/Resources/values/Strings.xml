@@ -8,4 +8,6 @@
   <string name="saveButton">Save</string>
   <string name="saveButton">Save</string>
   <string name="report_ntf_label">Progress report</string>
+  <string name="pref_notification_title">Notification preferences</string>
+  <string name="pref_notification_send">Send daily notification</string>
 </resources>
