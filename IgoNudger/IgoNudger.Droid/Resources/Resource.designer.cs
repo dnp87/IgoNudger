@@ -60,32 +60,35 @@ namespace IgoNudger.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050008
-			public const int Check1 = 2131034120;
-			
-			// aapt resource value: 0x7f050006
-			public const int Text1 = 2131034118;
+			// aapt resource value: 0x7f050009
+			public const int Check1 = 2131034121;
 			
 			// aapt resource value: 0x7f050007
-			public const int Text2 = 2131034119;
+			public const int Text1 = 2131034119;
+			
+			// aapt resource value: 0x7f050008
+			public const int Text2 = 2131034120;
 			
 			// aapt resource value: 0x7f050000
 			public const int addTaskButton = 2131034112;
 			
+			// aapt resource value: 0x7f050005
+			public const int completedSwitch = 2131034117;
+			
 			// aapt resource value: 0x7f050004
-			public const int completedSwitch = 2131034116;
+			public const int descriptionEdit = 2131034116;
 			
 			// aapt resource value: 0x7f050003
-			public const int descriptionEdit = 2131034115;
+			public const int nameEdit = 2131034115;
 			
-			// aapt resource value: 0x7f050002
-			public const int nameEdit = 2131034114;
-			
-			// aapt resource value: 0x7f050005
-			public const int saveButton = 2131034117;
+			// aapt resource value: 0x7f050006
+			public const int saveButton = 2131034118;
 			
 			// aapt resource value: 0x7f050001
-			public const int taskList = 2131034113;
+			public const int settingsButton = 2131034113;
+			
+			// aapt resource value: 0x7f050002
+			public const int taskList = 2131034114;
 			
 			static Id()
 			{
@@ -128,17 +131,20 @@ namespace IgoNudger.Droid
 			// aapt resource value: 0x7f040001
 			public const int app_name = 2130968577;
 			
-			// aapt resource value: 0x7f040002
-			public const int completedText = 2130968578;
+			// aapt resource value: 0x7f040003
+			public const int completedText = 2130968579;
+			
+			// aapt resource value: 0x7f040006
+			public const int report_ntf_label = 2130968582;
 			
 			// aapt resource value: 0x7f040005
-			public const int report_ntf_label = 2130968581;
+			public const int saveButton = 2130968581;
+			
+			// aapt resource value: 0x7f040002
+			public const int settings_name = 2130968578;
 			
 			// aapt resource value: 0x7f040004
-			public const int saveButton = 2130968580;
-			
-			// aapt resource value: 0x7f040003
-			public const int taskDetailsTitle = 2130968579;
+			public const int taskDetailsTitle = 2130968580;
 			
 			static String()
 			{

@@ -14,6 +14,9 @@ namespace IgoNudger.Droid
         ListView _listView;
         IList<TaskItem> _tasks;
 
+        Button _addButton;
+        Button _settingsButton;
+
         protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
@@ -24,22 +27,32 @@ namespace IgoNudger.Droid
             _listView = FindViewById<ListView>(Resource.Id.taskList);
             _listView.ItemClick += ListView_ItemClick;
 
-            // Get our button from the layout resource,
-            // and attach an event to it
-            Button button = FindViewById<Button>(Resource.Id.addTaskButton);
-            button.Click += delegate
-            {
-                var intent = new Intent(this, typeof(TaskDetailsActivity));
-                intent.PutExtra("Id", 0);
+            _addButton = FindViewById<Button>(Resource.Id.addTaskButton);
+            _addButton.Click += AddButton_Click;
 
-                StartActivity(intent);
-            };
+            _settingsButton = FindViewById<Button>(Resource.Id.settingsButton);
+            _settingsButton.Click += SettingButton_Click;
 
-            var rcv = new NotificationAlertReceiver();
+            /*var rcv = new NotificationAlertReceiver();
             var hh = 19;
             var mm = 0;
-            rcv.SetAlarm(this, hh, mm);
-		}
+            rcv.SetAlarm(this, hh, mm);*/
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(TaskDetailsActivity));
+            intent.PutExtra("Id", 0);
+
+            StartActivity(intent);
+        }
+
+        private void SettingButton_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(SettingsActivity));
+
+            StartActivity(intent);
+        }
 
         private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {

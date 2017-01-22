@@ -8,6 +8,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/addTask" />
+    <Button
+        android:id="@+id/settingsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/settings_name" />
     <ListView
         android:id="@+id/taskList"
         android:layout_width="fill_parent"
