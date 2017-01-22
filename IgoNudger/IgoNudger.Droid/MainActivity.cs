@@ -5,6 +5,7 @@ using Android.Content;
 using Android.Widget;
 using Android.OS;
 using System.Collections.Generic;
+using Android.Preferences;
 
 namespace IgoNudger.Droid
 {
@@ -33,10 +34,15 @@ namespace IgoNudger.Droid
             _settingsButton = FindViewById<Button>(Resource.Id.settingsButton);
             _settingsButton.Click += SettingButton_Click;
 
-            /*var rcv = new NotificationAlertReceiver();
-            var hh = 19;
-            var mm = 0;
-            rcv.SetAlarm(this, hh, mm);*/
+            ISharedPreferences sharedPref = PreferenceManager.GetDefaultSharedPreferences(this);
+            if( sharedPref.GetBoolean("pref_notification_send", false) )
+            {
+                var rcv = new NotificationAlertReceiver();
+                //todo: move this to settings too
+                var hh = 19;
+                var mm = 0;
+                rcv.SetAlarm(this, hh, mm);
+            }            
         }
 
         private void AddButton_Click(object sender, EventArgs e)
